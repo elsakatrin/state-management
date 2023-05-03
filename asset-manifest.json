@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/state-management/static/css/main.a12ff6dc.css",
+    "main.js": "/state-management/static/js/main.13adb20c.js",
+    "index.html": "/state-management/index.html",
+    "main.a12ff6dc.css.map": "/state-management/static/css/main.a12ff6dc.css.map",
+    "main.13adb20c.js.map": "/state-management/static/js/main.13adb20c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a12ff6dc.css",
+    "static/js/main.13adb20c.js"
+  ]
+}
