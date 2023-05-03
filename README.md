@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+Module 6 - state management using useContext
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For this project I followed this tutorial.
+https://dev.to/samueladex/react-context-api-for-beginners-using-usecontext-hook-jld
+It's a really simple counter where I used useContext to increase and decrease the number on the counter with + and -. Comments in the code.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I only used useContext in this project, but not useReducer so instead I'm going to write about both of these hooks. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+useContext: 
+useContext is used to save a state globally.
+First 
+React context provides a way to pass data around your component tree without having to pass it through each parent to a child. It accepts the content object returned from React createContext as an argument and returns the current context value. The current context value is determined by the value prop of the nearest context provider. 
+You can use useContext to do pretty cool things. You can use it to tell your components which layout it's supposed to render based on the state; basically just keep track of UI information. 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+useReducer:
+useReducer is an alternative to useState. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You should use useState when:
+* Application is small
+* State value is a primitive value
+* Simple UI state transitions
+* Logic os not complicated and can stay in one component
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You should use useReducer when:
+* Application architecture is complex and big
+* When logic to a update state is complex or you want to update state deep down in component tree
+* The state value is either an object or an array
+* You need more predictible and maintainable state architecture
 
-### `npm run eject`
+useReducer helps you manage complex state and state trancitions in a predictible and organized way by seperating your state logic from components logic.
+It's helpful when you have a state that can be updated in multiple ways and you want to keep track of those in a single page.
+ With useReducer you define a reducer function that takes the current state and an action (usually an object with type) as input and returns a new state based on the action. 
+ You then call useReducer with the reducer function and an initial state value, and it returns an array with two elements:the current state and a dispatch function that can be used to update the state. 
+ You then call the dispatch function with an action object that describes how you want to update the state. The reducer function will be called with the current state and action, and will re-render and return a new state that replaces the old one. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Some interesting links related to the topic:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Here's an exciting article on how to make dark mode with useContext https://medium.com/swlh/creating-a-dark-mode-for-your-react-app-with-usecontext-65c408a3b8e8
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Article on how to use useReducer: https://medium.com/free-code-camp/hooked-on-hooks-how-to-use-reacts-usereducer-2fe8f486b963
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+And here's an article/tutorial on react hooks, for a counter app similar to what I did: https://medium.com/@seantheurgel/react-hooks-as-state-management-usecontext-useeffect-usereducer-a75472a862fe# state-management
